@@ -25,6 +25,5 @@ RUN chmod -v +x /etc/service/*/run && \
     ln -s /config /etc/redis
 
 # Volumes and Ports
-VOLUME /config
-VOLUME /data
+VOLUME ["/config", "/data"]
 EXPOSE 6379/tcp
