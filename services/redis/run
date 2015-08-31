@@ -8,4 +8,6 @@ fi
 sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf
 sed 's/^bind 127.0.0.1/bind 0.0.0.0/' -i /etc/redis/redis.conf
 
+umask 0002
+
 exec /sbin/setuser abc redis-server /config/redis.conf
