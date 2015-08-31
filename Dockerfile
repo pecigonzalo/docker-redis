@@ -15,14 +15,7 @@ ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 ADD defaults/ /defaults/
 RUN chmod -v +x /etc/service/*/run && \
-    chmod -v +x /etc/my_init.d/*.sh && \
-# Configure redis
-    mkdir /data && \
-    rm -rf /var/lib/redis && \
-    ln -s /data /var/lib/redis && \
-    mkdir /config && \
-    rm -rf /etc/redis && \
-    ln -s /config /etc/redis
+    chmod -v +x /etc/my_init.d/*.sh
 
 # Volumes and Ports
 VOLUME ["/config", "/data"]
