@@ -1,2 +1,13 @@
 #!/bin/bash
-exec /sbin/setuser abc "/command/to/execute" 
+
+sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf
+sed 's/^bind 127.0.0.1/bind 0.0.0.0/' -i /etc/redis/redis.conf
+sed '/^logfile/d' -i /etc/redis/redis.conf
+
+# Allow arguments to be passed to redis-server
+if [[ ${1:0:1} = '-' ]]; then
+  EXTRA_ARGS="$@"
+  set --
+fi
+
+exec /sbin/setuser abc redis-server /config/redis.conf ${REDIS_PASSWORD:+--requirepass $REDIS_PASSWORD} ${EXTRA_ARGS}
