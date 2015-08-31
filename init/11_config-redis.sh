@@ -2,8 +2,8 @@
 
 if [ ! -f /data ]; then
     mkdir /data
-    chown abc -R /data 
 fi
+chown abc -R /data 
 
 if [ -f /var/lib/redis ]; then
     rm -rf /var/lib/redis && \
@@ -12,8 +12,8 @@ fi
 
 if [ ! -f /config ]; then
     mkdir /config
-    chown abc -R /config
 fi
+chown abc -R /config
 
 if [ -f /etc/redis ]; then
     rm -rf /etc/redis && \
