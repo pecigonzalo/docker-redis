@@ -3,8 +3,8 @@ MAINTAINER Gonzalo Peci <pecigonzalo_docker@outlook.com>
 ENV APTLIST="redis-server"
 
 # Installing redis-server
-RUN apt-get update -q && \
-    add-apt-repository ppa:chris-lea/redis-server && \
+RUN add-apt-repository ppa:chris-lea/redis-server && \
+    apt-get update -q && \
     apt-get install -qy $APTLIST && \
     apt-get clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
