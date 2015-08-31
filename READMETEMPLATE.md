@@ -5,6 +5,7 @@ The [LinuxServer.io](http://linuxserver.io) team brings you another quality cont
 # linuxserver/redis
 
 ![](http://redis.io/images/redis-white.png)
+
 Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
 [Redis Documents](http://redis.io/documentation)
 
