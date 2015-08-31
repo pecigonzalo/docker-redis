@@ -11,7 +11,6 @@ RUN apt-get update -q && \
 
 # Configure redis
 RUN mkdir /data && chown abc:abc /data && \
-    mv /var/lib/redis/* /data/ && \
     rm -rf /var/lib/redis && \
     ln -s /data /var/lib/redis && \
     mkdir /config && chown abc:abc /config && \
