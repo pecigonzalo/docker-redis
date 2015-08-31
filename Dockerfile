@@ -14,13 +14,13 @@ RUN mkdir /data && chown abc:abc /data && \
     rm -rf /var/lib/redis && \
     ln -s /data /var/lib/redis && \
     mkdir /config && chown abc:abc /config && \
-    mv /etc/redis/* /config/ && \
     rm -rf /etc/redis && \
     ln -s /config /etc/redis
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
+ADD defaults/ /defaults/
 RUN chmod -v +x /etc/service/*/run && \
     chmod -v +x /etc/my_init.d/*.sh
 
