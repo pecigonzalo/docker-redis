@@ -2,21 +2,24 @@
 
 The [LinuxServer.io](http://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](http://forum.linuxserver.io) or for real-time support our [IRC](http://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
 
-# linuxserver/<container-name>
+# linuxserver/redis
 
-<Provide a short, concise description of the application. No more than two SHORT paragraphs. Link to sources where possible and include an image illustrating your point if necessary. Point users to the original applications website, as that's the best place to get support - not here.>
+![](http://redis.io/images/redis-white.png)
+Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
+[Redis Documents](http://redis.io/documentation)
 
 ## Usage
 
 ```
-docker create --name=<container-name> -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 1234:1234 linuxserver/<container-name>
+docker create --name=<container-name> -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 6379:6379 linuxserver/redis
 ```
 
 **Parameters**
 
-* `-p 4242` - the port(s)
+* `-p 6379` - default redis port
 * `-v /etc/localhost` for timesync - *optional*
-* `-v /config` -
+* `-v /config` - redis.conf storage directory - *optional*
+* `-v /data` - redis db persistant storage directory - *optional*
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 
@@ -30,8 +33,7 @@ Part of what makes our containers work so well is by allowing you to specify you
 
 ## Setting up the application 
 
-<Insert a basic user guide here to get a n00b up and running with the software inside the container.> DELETE ME
-
+<TBD>
 
 ## Updates
 
