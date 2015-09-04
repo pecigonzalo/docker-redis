@@ -7,7 +7,7 @@ if [ ! -f /config/redis.conf ]; then
 fi
 
 # Creat data dir and ensure ownership
-mkdir -p /data && chmod abc -R /data
+mkdir -p /data && chown abc -R /data
 
 # Create config dir and ensure ownership
-mkdir -p /config && chmod abc -R /config
+mkdir -p /config && chown abc -R /config
