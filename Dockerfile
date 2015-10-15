@@ -1,5 +1,6 @@
 FROM linuxserver/baseimage
 MAINTAINER Gonzalo Peci <pecigonzalo_docker@outlook.com>
+
 ENV APTLIST="redis-server"
 
 # Installing redis-server
@@ -13,9 +14,8 @@ RUN add-apt-repository ppa:chris-lea/redis-server && \
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run && \
-    chmod -v +x /etc/my_init.d/*.sh
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
 
 # Volumes and Ports
-VOLUME ["/config", "/data"]
+VOLUME "/config "/data"
 EXPOSE 6379/tcp
